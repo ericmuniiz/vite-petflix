@@ -1,17 +1,16 @@
 import { useEffect, useState } from 'react';
-import { Link} from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom'
 import './App.css'
 
-
-function App() {
+function Video() {
 
   const [video, setVideo] = useState();
-  const [currentVideo, setCurrentVideo] = useState(1)
+  const {id} = useParams()
 
   useEffect(() => {
 
     const fetchData = async () => {
-      const response = await fetch(`http://localhost:3000/video/${currentVideo}`);
+      const response = await fetch(`http://localhost:3000/video/${id}`);
       const data = await response.json();
 
       setVideo(data);
@@ -23,7 +22,7 @@ function App() {
 
     fetchData()
 
-  }, [currentVideo])
+  }, [])
 
 
 
@@ -33,14 +32,16 @@ function App() {
       {video && (
         <>
           <div>
-            <Link to={`/Assistir/${currentVideo}`}> <img src={video.mensagem[0].capa}/> </Link>
+            <video width="750" height="500" controls >
+              <source src={video.mensagem[0].link} type="video/mp4" />
+            </video>
           </div>
 
         </>
       )}
 
       <div>
-
+        <Link to="/Home"><p>Voltar</p></Link>
       </div>
 
 
@@ -53,4 +54,4 @@ function App() {
   )
 }
 
-export default App
+export default Video
