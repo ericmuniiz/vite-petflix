@@ -1,17 +1,16 @@
 import { useEffect, useState } from 'react';
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './App.css'
 
 
 function App() {
 
-  const [video, setVideo] = useState();
-  const [currentVideo, setCurrentVideo] = useState(1)
+  const [video, setVideo] = useState([]);
 
   useEffect(() => {
 
     const fetchData = async () => {
-      const response = await fetch(`http://localhost:3000/video/${currentVideo}`);
+      const response = await fetch(`http://localhost:3000/videos`);
       const data = await response.json();
 
       setVideo(data);
@@ -19,34 +18,28 @@ function App() {
 
     }
 
-
-
     fetchData()
 
-  }, [currentVideo])
+  }, [])
 
 
 
   return (
     <>
-
       {video && (
         <>
-          <div>
-            <Link to={`/Assistir/${currentVideo}`}> <img src={video.mensagem[0].capa}/> </Link>
-          </div>
+          {video.map((e) => (
+            <>
+            <Link to={`/Assistir/${e.id}`} key={e.id}>
+              <img src={e.capa} />
+            </Link>
+            <p>{e.nome}</p>
+            </>
+          ))}
+
 
         </>
       )}
-
-      <div>
-
-      </div>
-
-
-      <div>
-
-      </div>
     </>
 
 

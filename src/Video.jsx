@@ -33,7 +33,7 @@ function Video() {
         <>
           <div>
             <video width="750" height="500" controls >
-              <source src={video.mensagem[0].link} type="video/mp4" />
+              <source src={video.link} type="video/mp4" />
             </video>
           </div>
 
