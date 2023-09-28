@@ -5,7 +5,31 @@ import './App.css'
 function Video() {
 
   const [video, setVideo] = useState();
-  const {id} = useParams()
+  const {id} = useParams();
+
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.keyCode === 32) {
+        event.preventDefault();
+        const videoElement = document.getElementById('meuVideo');
+        if (videoElement) {
+          if (videoElement.paused) {
+            videoElement.play();
+          } else {
+            videoElement.pause();
+          }
+        }
+      }
+    };
+
+    // Adiciona o ouvinte de eventos quando o componente é montado
+    document.addEventListener('keydown', handleKeyPress);
+
+    // Remove o ouvinte de eventos quando o componente é desmontado
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, []); 
 
   useEffect(() => {
 
@@ -31,8 +55,8 @@ function Video() {
 
       {video && (
         <>
-          <div>
-            <video width="750" height="500" controls >
+          <div className='container'>
+            <video width="1050" height="700" id='meuVideo' controls>
               <source src={video.link} type="video/mp4" />
             </video>
           </div>

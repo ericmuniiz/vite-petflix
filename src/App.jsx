@@ -27,18 +27,22 @@ function App() {
   return (
     <>
     <div className='container'>
-    <img src="PetLogo.png" width={120}/>
+      <div className='header'>
+        <div className='head1'><img src="PetLogo.png" width={120} className='petlogo'/> </div>
+        <div className='head2'> <img src="doge-perfil.jpg" width={20} className='perfil'/></div>
+      </div>
+    
       {video && (
         <>
         <div className='videoContainer'>
-        <div className='box1'><h1>VÍDEOS ENGRAÇADOS</h1></div>
+        <div className='box1'><h1>VÍDEOS LEGAIS</h1></div>
+        
           <div className='videoList'>
             
             {video.map((e) => (
               <>
               <Link to={`/Assistir/${e.id}`} key={e.id}>
-                <img src={e.capa} className='capa'/>
-                <p className='nomeVideo'>{e.nome}</p>
+                <img src={e.capa} className='capa' alt={e.nome} />
               </Link>
               
               </>
@@ -47,6 +51,7 @@ function App() {
           </div>
         </>
       )}
+
       </div>
     </>
 
