@@ -56,7 +56,7 @@ function Video() {
       {video && (
         <>
           <div className='container'>
-            <video width="1050" height="700" id='meuVideo' controls>
+            <video width="950" height="700" id='meuVideo' controls>
               <source src={video.link} type="video/mp4" />
             </video>
           </div>

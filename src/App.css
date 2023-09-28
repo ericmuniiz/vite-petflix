@@ -3,7 +3,7 @@
 .videoContainer {
   display: flex;
   width: 100vw;
-  height: 45vh;
+  height: 75vh;
   background-color: black;
   align-items: center;
   flex-direction: column;

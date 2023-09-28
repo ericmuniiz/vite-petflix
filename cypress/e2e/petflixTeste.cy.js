@@ -12,7 +12,7 @@ describe('Sistema da petFlix deve', () => {
     it('Dar play em um video', () => {
         cy.visit('http://localhost:5173/Home')
         cy.get('[href="/Assistir/1"]').click()
-        cy.get('[width="750"]').click();
+        cy.get('[width="950"]').click();
     })
     it('Voltar para o home, da tela assistir', () => {
         cy.visit('http://localhost:5173/Home')
