@@ -26,20 +26,28 @@ function App() {
 
   return (
     <>
+    <div className='container'>
+    <img src="PetLogo.png" width={120}/>
       {video && (
         <>
-          {video.map((e) => (
-            <>
-            <Link to={`/Assistir/${e.id}`} key={e.id}>
-              <img src={e.capa} />
-            </Link>
-            <p>{e.nome}</p>
-            </>
-          ))}
-
-
+        <div className='videoContainer'>
+        <div className='box1'><h1>VÍDEOS ENGRAÇADOS</h1></div>
+          <div className='videoList'>
+            
+            {video.map((e) => (
+              <>
+              <Link to={`/Assistir/${e.id}`} key={e.id}>
+                <img src={e.capa} className='capa'/>
+                <p className='nomeVideo'>{e.nome}</p>
+              </Link>
+              
+              </>
+            ))}
+          </div>
+          </div>
         </>
       )}
+      </div>
     </>
 
 
