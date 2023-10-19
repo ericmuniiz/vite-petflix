@@ -28,8 +28,8 @@ function App() {
     <>
     <div className='container'>
       <div className='header'>
-        <div className='head1'><img src="Petlogo.png" width={120} className='petlogo'/> </div>
-        <div className='head2'> <img src="doge-perfil.jpg" width={20} className='perfil'/></div>
+        <div className='head1'><img src={"Petlogo.png"} width={120} className='petlogo'/> </div>
+        <div className='head2'> <img src={"doge-perfil.jpg"} width={20} className='perfil'/></div>
       </div>
     
       {video && (
