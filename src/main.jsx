@@ -8,7 +8,7 @@ import App from "./App";
 // Define as páginas (rotas) do projeto
 const router = createBrowserRouter([
   {
-    path: "/Home",
+    path: "/",
     element: <App/>
   },
   {

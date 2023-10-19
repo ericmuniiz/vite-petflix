@@ -41,8 +41,8 @@ function App() {
             
             {video.map((e) => (
               <>
-              <Link to={`/Assistir/${e.id}`} key={e.id}>
-                <img src={e.capa} className='capa' alt={e.nome} />
+              <Link to={e.id && `/Assistir/${e.id}`} key={e.id}>
+                <img src={e.capa && e.capa} className='capa' alt={ e.nome && e.nome} />
               </Link>
               
               </>

@@ -57,7 +57,7 @@ function Video() {
         <>
           <div className='container'>
             <video width="950" height="700" id='meuVideo' controls>
-              <source src={video.link} type="video/mp4" />
+              <source src={video.link && video.link} type="video/mp4" />
             </video>
           </div>
 
@@ -65,7 +65,7 @@ function Video() {
       )}
 
       <div>
-        <Link to="/Home"><p>Voltar</p></Link>
+        <Link to="/"><p>Voltar</p></Link>
       </div>
 
 
