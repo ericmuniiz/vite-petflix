@@ -27,8 +27,8 @@ function App() {
     <>
     <div className='container'>
       <div className='header'>
-        <div className='head1'><img src="../img/PetLogo.png" width={120} className='petlogo'/> </div>
-        <div className='head2'> <img src="../img/doge-perfil.jpg" width={20} className='perfil'/></div>
+        <div className='head1'><img src="https://image.roku.com/developer_channels/prod/e5d916201366e281798dd69ac5424bc24b495c84df810906db934bae8373798a.png" width={120} className='petlogo'/> </div>
+        <div className='head2'> <img src="https://investnews.com.br/wp-content/uploads/2021/06/doge-1200x800.jpg" width={20} className='perfil'/></div>
       </div>
     
       {video && (
