@@ -34,7 +34,7 @@ function Video() {
   useEffect(() => {
 
     const fetchData = async () => {
-      const response = await fetch(`http://localhost:3000/video/${id}`);
+      const response = await fetch(`https://api-petflix-yzoh.onrender.com/video/${id}`);
       const data = await response.json();
 
       setVideo(data);
