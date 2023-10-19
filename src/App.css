@@ -50,12 +50,10 @@
   text-align: center;
   align-items: center;
   max-width: 95%;
-  overflow-x: hidden;
+  
 }
 
-.videoList:hover{
-  overflow-x: scroll;
-}
+
 
 a {
   text-decoration: none;
@@ -64,9 +62,9 @@ a {
 }
 
 .capa {
-  width: 450px;
+  width: 200px;
   border-radius: 5px;
-  margin: 10px;
+  margin: 5px;
   border: 2px solid rgba(0,0,0,0);
   object-fit: cover;
 }
@@ -74,3 +72,12 @@ a {
   border: 2px solid brown
 }
 
+@media only screen and (max-width: 600px) {
+  .videoList{
+    flex-direction: column;
+  }
+  #meuVideo{
+    width: 500px;
+  }
+  
+}
