@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Loading from './Components/Loading';
 import './App.css'
 
 function App() {
 
   const [video, setVideo] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
 
@@ -13,6 +15,7 @@ function App() {
       const data = await response.json();
 
       setVideo(data);
+      setLoading(true);
       console.log(data);
 
     }
@@ -30,11 +33,13 @@ function App() {
         <div className='head1'><img src="https://image.roku.com/developer_channels/prod/e5d916201366e281798dd69ac5424bc24b495c84df810906db934bae8373798a.png" width={120} className='petlogo'/> </div>
         <div className='head2'> <img src="https://investnews.com.br/wp-content/uploads/2021/06/doge-1200x800.jpg" width={20} className='perfil'/></div>
       </div>
-    
-      {video && (
-        <>
+      
+      
         <div className='videoContainer'>
         <div className='box1'><h1>VÍDEOS LEGAIS</h1></div>
+
+        {video && (
+        <>
         
           <div className='videoList'>
             
@@ -47,10 +52,11 @@ function App() {
               </>
             ))}
           </div>
-          </div>
+          
         </>
       )}
-
+      </div>
+      {!loading && <Loading/>}
       </div>
     </>
 
