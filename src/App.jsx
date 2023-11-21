@@ -9,7 +9,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-
+    
     const fetchData = async () => {
       const response = await fetch(`https://api-petflix-yzoh.onrender.com/videos`);
       const data = await response.json();
@@ -19,8 +19,9 @@ function App() {
       console.log(data);
 
     }
-
-    fetchData()
+    
+    setTimeout(fetchData, 5000);
+    
 
   }, [])
 
@@ -37,26 +38,23 @@ function App() {
       
         <div className='videoContainer'>
         <div className='box1'><h1>VÍDEOS LEGAIS</h1></div>
-
+        {!loading && <Loading/>}
         {video && (
         <>
-        
           <div className='videoList'>
-            
             {video.map((e) => (
               <>
               <Link to={e.id && `/Assistir/${e.id}`} key={e.id}>
                 <img src={e.capa && e.capa} className='capa' alt={ e.nome && e.nome} />
               </Link>
-              
               </>
             ))}
           </div>
-          
         </>
       )}
       </div>
-      {!loading && <Loading/>}
+      
+
       </div>
     </>
 

@@ -72,10 +72,10 @@ a {
   border: 2px solid brown
 }
 
+/* //loading */
+
 .load_container{
   display: flex;
-  position: fixed;
-  top: 10px;
 }
 
 @media only screen and (max-width: 600px) {
